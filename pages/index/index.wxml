@@ -1,0 +1,53 @@
+<!--index.wxml-->
+
+<import src="../../app.wxml"/>
+<template  is="app" data='{{current: "homepage"}}'>
+
+</template>
+<view>
+  <!-- 主题图片 -->
+  <view >
+    <image class="v_image" src="https://i.loli.net/2017/08/21/599a521472424.jpg"> </image>
+  </view>
+
+
+  <view wx:for="{{productItem}}" wx:key="{{item.name}}" >
+    <i-card
+            title="{{item.name}}"
+            extra="{{item.describe}}"
+            thumb="{{item.img}}"
+
+    >
+      <view slot="footer">
+        <text>价格:</text> ￥<tag>{{item.price}}</tag>
+        <i-button bind:click="addToCart"
+                  data-item="{{item}}"
+                  type="info"
+                  size="small"
+                  shape="circle"
+                  inline="true"
+        >加入购物车</i-button>
+        <i-button bind:click="handleClick"
+                  data-item="{{item}}"
+                  type="error"
+                  size="small"
+                  shape="circle"
+                  inline="true"
+        >立即购买</i-button>
+      </view>
+    </i-card>
+  </view>
+  <i-tab-bar fixed="true" current="{{ current }}" color="#f759ab" bindchange="handleChange">
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+    <i-tab-bar-item key="cart" count="{{cartProductCount}}" icon="publishgoods_fill" current-icon="publishgoods_fill"  title="购物车"
+    ></i-tab-bar-item>
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+  </i-tab-bar>
+</view>
+
+
+
+
+
+
+

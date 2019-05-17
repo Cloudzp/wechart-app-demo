@@ -1,0 +1,4 @@
+<import src="../../app.wxml"/>
+
+<template is="app" data='{{current:"mine"}}' />
+<view>user</view>

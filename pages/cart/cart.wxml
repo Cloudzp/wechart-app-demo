@@ -1,0 +1,71 @@
+<import src="../../app.wxml"/>
+<template is="app" data='{{current: "cart"}}'/>
+
+<view>
+    <view class="top_padding">
+    </view>
+
+
+    <view wx:if="{{cartProduct.length===0}}" class="cart_empty" >
+        <i-row>
+            <i-icon type="publishgoods_fill" size="80" />
+        </i-row>
+        <i-row>
+            <label>空空如也！</label>
+        </i-row>
+        <i-row>
+            <i-button bind:click="toShop"
+                      type="error"
+                      size="small"
+                      inline="true"
+            >去购物</i-button>
+        </i-row>
+    </view>
+
+    <view wx:else>
+        <i-pannel  wx:for="{{cartProduct}}" wx:key="{{item.name}}">
+            <i-row>
+                <i-col span="3" i-class="col-class">
+                    <i-radio ></i-radio>
+                </i-col>
+
+                <i-col span="4" i-class="col-class">
+                    <image class="v_image" src="{{item.img}}"> </image>
+                </i-col>
+                <i-col span="4" i-class="col-class">
+                    <i-row >
+                        <label class="font10px">名称:</label><tag class="font10px">{{item.name}}</tag>
+                    </i-row>
+                    <i-row>
+                        <label class="font10px">价格:</label><tag class="font10px font_color_red">￥{{item.price}}</tag>
+                    </i-row>
+                </i-col>
+
+                <i-col span="8" i-class="col-class">
+                    <view>
+                        <i-input-number value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
+                    </view>
+                </i-col>
+
+                <i-col span="4" i-class="col-class">
+                    <i-button
+                            bind:click="deleteOne"
+                            data-item="{{item}}"
+                            type="info"
+                            size="small"
+                            shape="circle"
+                            inline="true"
+                    >删除</i-button>
+                </i-col>
+            </i-row>
+        </i-pannel>
+        <i-pannel class="padding_right">
+             <i-col span="15" i-class="col-class"></i-col>
+             <i-col span="8" i-class="col-class">
+                  <label> 总价: ￥100</label>
+             </i-col>
+
+        </i-pannel>
+    </view>
+</view>
+

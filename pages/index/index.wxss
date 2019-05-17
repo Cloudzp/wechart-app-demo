@@ -1,0 +1,45 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.bc_green{
+  background-color: #999;
+  width: 20%;
+  text-align: center;
+}
+.bc_red{
+  background-color: red;
+  width: 40%;
+  text-align: center;
+}
+.bc_blue{
+  background-color: blue;
+  width: 40%;
+  text-align: center;
+}
+.v_image{
+  width: 100%;
+}
+
+.bt_red{
+  width: 35px;
+  height: 20px;
+}

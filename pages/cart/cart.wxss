@@ -1,0 +1,35 @@
+.v_image{
+    width: 50px;
+    height: 50px;
+    margin-left: 10%;
+}
+.font10px{
+    font-size: 11px;
+}
+.font_color_red{
+    color: red;
+}
+.input_number_small{
+    width: 25px;
+    height: 10px;
+}
+.bt_small{
+    width: 25px;
+    height: 18px;
+    font-size: 10px;
+}
+.top_padding{
+    margin-top: 50px;
+}
+
+.cart_empty{
+    margin-top: 40%;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    text-align-all: center;
+}
+.padding_right{
+    margin-top: 50px;
+    text-align: right;
+}
